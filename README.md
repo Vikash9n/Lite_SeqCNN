@@ -1,7 +1,7 @@
 # Lite_SeqCNN+
 This reprository is for Lite-SeqCNN+.
 
-Please follow the code example given in the folder Example to run the code.
+To run the python script, follow the code example given in the folder Example.
 This has following main python files.
 
   1. Evaluate.py - This python file contains the code for the evaluation metrics used.
