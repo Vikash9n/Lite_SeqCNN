@@ -28,10 +28,15 @@ Step 2:--> Training the segmented encoder
         For this, execute the Lite_SegCNN_encoder.py.
 
 This trained segmented encoder is later used with the LiteSeqCNN+.
+
+
 Implementing LiteSeqCNN+ :-->
 
+
 This is an ensemble PFP framework based on multiple segment-size. i.e., (200,300,400).
+
 The steps are as follows:
+
 (1) Train segment encoder with the different segment size.
 
 
