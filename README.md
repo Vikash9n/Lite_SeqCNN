@@ -12,11 +12,17 @@ This has following main python files.
 Experimental Setups:-->
 
 Step 1:--> Creating a segmented dataset
+
         This will allow creating a fixed-sized segments for the protein sequence. Execute the Segmenation.py .
+        
 Step 2:--> Training the segmented encoder
+
         This is two steps:-
+        
         (i) Creating a tokenized segments (i.e., a string of n-mers)
+        
         (ii) Train the dilated CNN-based architecture.
+        
         For this, execute the Lite_SegCNN_encoder.py.
 
 This trained segmented encoder is later used with the LiteSeqCNN+.
