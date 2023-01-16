@@ -19,30 +19,6 @@ from Segmentation import segmentation
 
 np.random.seed(7)
 
-def test_segment(filename, low, up):
-    myFile = open(filename, 'w', newline = '')
-    with myFile:
-        csv_writer = writer(myFile)
-        for j, row in enumerate(seqData):
-            segment = [ ]
-            if(len(row) > low and len(row) < up):
-                segment.append(row)
-                for item in label[j]:
-                    segment.append(item)
-                csv_writer.writerow(segment)
-    myFile.close()
-
-dataframe = pd.read_csv("/content/gdrive/MyDrive/CAFA3/bp/test_data_bp1.csv", header=None)
-dataset = dataframe.values
-seqData = dataset[:,0]
-label = dataset[:,1:len(dataset[0])]
-print('Original Dataset Size : %s' %len(dataset))
-test_segment('testData200.csv', 0, 201)
-test_segment('testData500.csv', 200, 501)
-test_segment('testData1000.csv', 500, 1001)
-test_segment('testData16000.csv', 1000, 16000)
-
-
 # Preparing For Training
 segmentSize = 200
 nonOL = segmentSize - 50
