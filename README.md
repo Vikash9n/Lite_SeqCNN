@@ -15,9 +15,9 @@ Experimental Setups:-->
 
 Step 1:--> Creating a segmented dataset
 
-        This will allow creating a fixed-sized segments for the protein sequence. Execute the Segmenation.py .
+        This will allow creating a fixed-sized segments for the protein sequence. Execute function segmentation from the Segmenation.py with parameter (segmentSize,Overlapping) as (200,150).
         
-Step 2:--> Training the segmented encoder
+Step 2:--> Training the sequence segment encoder
 
         This is two steps:-
         
@@ -33,11 +33,12 @@ This trained segmented encoder is later used with the LiteSeqCNN+.
 Implementing LiteSeqCNN+ :-->
 
 
-      This is an ensemble PFP framework based on multiple segment-size. i.e., (200,300,400).
+      This is an ensemble PFP framework based on multiple segment-size i.e., (200,300,400).
 
       The steps are as follows:
 
-      (1) Train segment encoder with the different segment size.
+      (1) Train segment encoder with the different segment size i.e., (200,300,400).
+      (2) Evaluate the model by executing the Lite_SeqCNN_plus.py for final evaluation.
 
 
 The dataset are available at gdrive: https://bit.ly/3EMJhLx
