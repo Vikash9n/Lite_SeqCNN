@@ -20,7 +20,7 @@ def segment(dataset, label, seg_size, overlap):
     return seq_data, label_data
 
 	
-def Segmentation(segSize, overLap):
+def segmentation(segSize, overLap):
   dataframe = pd.read_csv('/content/gdrive/MyDrive/CAFA3/bp/train_data_bp1.csv', header=None)
   dataset = dataframe.values
   print('Original Dataset Size : %s' %len(dataset))
