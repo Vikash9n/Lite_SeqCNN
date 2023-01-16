@@ -16,6 +16,7 @@ from keras.preprocessing import sequence
 from keras.callbacks import EarlyStopping
 import matplotlib.pyplot as plt
 from Segmentation import segmentation
+from Evaluate import *
 
 np.random.seed(7)
 
