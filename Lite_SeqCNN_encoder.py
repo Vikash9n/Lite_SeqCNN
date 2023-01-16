@@ -1,6 +1,3 @@
-from google.colab import drive
-drive.mount('/content/gdrive')
-
 import numpy as np
 import datetime
 from csv import writer
@@ -18,66 +15,9 @@ from tensorflow.keras import backend as K
 from keras.preprocessing import sequence
 from keras.callbacks import EarlyStopping
 import matplotlib.pyplot as plt
+from Segmentation import segmentation
+
 np.random.seed(7)
-
-def accuracy(y_true, y_pred, normalize=True, sample_weight=None):
-    acc_list = []
-    for i in range(y_true.shape[0]):
-        set_true = set( np.where(y_true[i])[0] )
-        set_pred = set( np.where(y_pred[i])[0] )
-        tmp_a = None
-        if len(set_true) == 0 and len(set_pred) == 0:
-            tmp_a = 1
-        else:
-            tmp_a = len(set_true.intersection(set_pred))/\
-                    float( len(set_true.union(set_pred)) )
-        acc_list.append(tmp_a)
-    return np.mean(acc_list)
-
-def precision(y_true, y_pred, normalize=True, sample_weight=None):
-    pre_list = []
-    for i in range(y_true.shape[0]):
-        set_true = set( np.where(y_true[i])[0] )
-        set_pred = set( np.where(y_pred[i])[0] )
-        tmp_prec = None
-        if len(set_true) == 0 and len(set_pred) == 0:
-            tmp_prec = 1
-            pre_list.append(tmp_prec)
-        elif len(set_pred) > 0:
-            tmp_prec = len(set_true.intersection(set_pred))/\
-                    float(len(set_pred))
-            pre_list.append(tmp_prec)
-        else:
-            None
-    return np.mean(pre_list)
-
-def recall(y_true, y_pred, normalize=True, sample_weight=None):
-    rec_list = []
-    for i in range(y_true.shape[0]):
-        set_true = set( np.where(y_true[i])[0] )
-        set_pred = set( np.where(y_pred[i])[0] )
-        tmp_rec = None
-        if len(set_true) == 0 and len(set_pred) == 0:
-            tmp_rec = 1
-        else:
-            tmp_rec = len(set_true.intersection(set_pred))/\
-                    float(len(set_true))
-        rec_list.append(tmp_rec)
-    return np.mean(rec_list)
-
-def f_score(y_true, y_pred, normalize=True, sample_weight=None):
-    acc_list = []
-    for i in range(y_true.shape[0]):
-        set_true = set( np.where(y_true[i])[0] )
-        set_pred = set( np.where(y_pred[i])[0] )
-        tmp_a = None
-        if len(set_true) == 0 and len(set_pred) == 0:
-            tmp_a = 1
-        else:
-            tmp_a = (2*len(set_true.intersection(set_pred)))/\
-                    float( len(set_true) + len(set_pred))
-        acc_list.append(tmp_a)
-    return np.mean(acc_list)
 
 def test_segment(filename, low, up):
     myFile = open(filename, 'w', newline = '')
@@ -103,38 +43,12 @@ test_segment('testData1000.csv', 500, 1001)
 test_segment('testData16000.csv', 1000, 16000)
 
 
-
-def segment(dataset, label, seg_size, overlap):
-    print("Non-overlapping Region: %s" %overlap)
-    print("Segment Size: %s" %seg_size)
-  
-    seq_data, label_data = [], []
-    for j, row in enumerate(dataset):
-        if(len(row) < 2001):
-            pos = math.ceil(len(row)/overlap)
-            if(pos < math.ceil(seg_size/overlap)):
-                pos = math.ceil(seg_size/overlap)
-            for itr in range(pos - math.ceil(seg_size/overlap) + 1):
-                init = itr * overlap
-                if(len(row[init : init + seg_size]) > 50):
-                    seq_data.append(row[init : init + seg_size])
-                    label_data.append(label[j])
-    return seq_data, label_data
-
-dataframe = pd.read_csv('/content/gdrive/MyDrive/CAFA3/bp/train_data_bp1.csv', header=None)
-dataset = dataframe.values
-print('Original Dataset Size : %s' %len(dataset))
-X = dataset[:,0]
-Y = dataset[:,1:len(dataset[0])]
-del dataframe, dataset
-print(X.shape, Y.shape)
-
 # Preparing For Training
 segmentSize = 200
 nonOL = segmentSize - 50
 SEG = str(segmentSize)
 
-X, Y = segment(X, Y, segmentSize, nonOL)
+X, Y = segmentation(X, Y, segmentSize, nonOL)
 nb_of_cls = len(Y[0])
 
 #Split the dataset
