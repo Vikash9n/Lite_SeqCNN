@@ -1,7 +1,9 @@
 # Lite_SeqCNN+
 This reprository is for Lite-SeqCNN+.
 
-To run the python script, follow the code example given in the folder Example.
+To run the python script, follow **the code example given in the folder Example**.
+
+
 This has following main python files.
 
 
