@@ -52,9 +52,7 @@ and Bioinformatics (2023).
 
 
                           Figure : LiteSeq-CNN Architecture
-                          
-                          ![mainpluscnn_architecture_page-0001](https://github.com/Vikash9n/Lite_SeqCNN/assets/85949447/8af08b51-b4a0-495b-ad7c-65842086332b)
-
+![mainpluscnn_architecture_page-0001](https://github.com/Vikash9n/Lite_SeqCNN/assets/85949447/8af08b51-b4a0-495b-ad7c-65842086332b)
 
   
 
