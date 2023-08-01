@@ -45,7 +45,10 @@ Implementing LiteSeqCNN+ :-->
 
 The dataset are available at gdrive: https://bit.ly/3EMJhLx
 
-    Kumar, Vikash, Akshay Deepak, Ashish Ranjan, and Aravind Prakash. "Lite-SeqCNN: A Light-weight Deep CNN Architecture for Protein Function Prediction." IEEE/ACM Transactions on Computational Biology and Bioinformatics (2023).
+Kumar, Vikash, Akshay Deepak, Ashish Ranjan, and Aravind Prakash. "Lite-SeqCNN: A Light-weight Deep 
+CNN Architecture for Protein Function Prediction." IEEE/ACM Transactions on Computational Biology 
+and Bioinformatics (2023).
+
 
                           LiteSeq-CNN Architecture
 ![mainpluscnn_architecture_page-0001](https://github.com/Vikash9n/Lite_SeqCNN/assets/85949447/bd774468-c812-4593-87d9-0c890bc2e10a)
