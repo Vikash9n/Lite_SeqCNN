@@ -17,7 +17,8 @@ Experimental Setups:-->
 
 Step 1:--> Creating a segmented dataset
 
-        This will allow creating a fixed-sized segments for the protein sequence. Execute function segmentation from the Segmenation.py with parameter (segmentSize,Overlapping) as (200,150).
+        This will allow creating a fixed-sized segments for the protein sequence. Execute function segmentation 
+        from the Segmenation.py with parameter (segmentSize,Overlapping) as (200,150).
         
 Step 2:--> Training the sequence segment encoder
 
