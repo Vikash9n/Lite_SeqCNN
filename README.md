@@ -49,3 +49,7 @@ The dataset are available at gdrive: https://bit.ly/3EMJhLx
 
 ![mainpluscnn_architecture_page-0001](https://github.com/Vikash9n/Lite_SeqCNN/assets/85949447/bd774468-c812-4593-87d9-0c890bc2e10a)
 
+
+LiteSeq-CNN Architecture
+
+
